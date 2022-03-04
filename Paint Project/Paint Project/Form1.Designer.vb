@@ -29,6 +29,7 @@ Partial Class Form1
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Color = New System.Windows.Forms.CheckedListBox()
         Me.TrackBar1 = New System.Windows.Forms.TrackBar()
+        Me.Button6 = New System.Windows.Forms.Button()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,17 +89,27 @@ Partial Class Form1
         '
         'TrackBar1
         '
-        Me.TrackBar1.Location = New System.Drawing.Point(93, 61)
+        Me.TrackBar1.Location = New System.Drawing.Point(1, 61)
         Me.TrackBar1.Name = "TrackBar1"
         Me.TrackBar1.Size = New System.Drawing.Size(104, 45)
         Me.TrackBar1.TabIndex = 6
         Me.TrackBar1.Tag = ""
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(121, 61)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 7
+        Me.Button6.Text = "Button6"
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.TrackBar1)
         Me.Controls.Add(Me.Color)
         Me.Controls.Add(Me.Button5)
@@ -121,4 +132,5 @@ Partial Class Form1
     Friend WithEvents Button5 As Button
     Friend WithEvents Color As CheckedListBox
     Friend WithEvents TrackBar1 As TrackBar
+    Friend WithEvents Button6 As Button
 End Class
