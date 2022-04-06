@@ -1,8 +1,8 @@
-﻿Public Class Square
+﻿Public Class Triangle
+    Dim points(2) As Point
     Public Property Pen As Pen
     Public Property w As Integer
     Public Property h As Integer
-    Public Property fill As Boolean
     Dim m_image As Image
     Dim m_a As Point
     Dim m_b As Point
@@ -14,12 +14,11 @@
         m_b = b
     End Sub
     Public Sub Draw()
+        points(0) = New Point(m_a.X, m_a.Y)
+        points(1) = New Point(m_a.X, m_a.Y + 50)
+        points(2) = New Point(m_a.X + 50, m_a.Y)
         Using g As Graphics = Graphics.FromImage(m_image)
-            If fill Then
-                g.FillRectangle(New SolidBrush(Pen.Color), m_a.X, m_b.Y, w, h)
-            Else
-                g.DrawRectangle(Pen, m_a.X, m_b.Y, w, h)
-            End If
+            g.DrawPolygon(Pen, points)
         End Using
 
     End Sub
