@@ -3,8 +3,13 @@
 
     Public Property Pen As Pen
         Public Property w As Integer
-        Public Property h As Integer
-        Dim m_image As Image
+    Public Property h As Integer
+    Public Property fill As Boolean
+    Public Property xspeed As Integer
+    Public Property yspeed As Integer
+    Dim xoffset As Integer
+    Dim yoffset As Integer
+    Dim m_image As Image
         Dim m_a As Point
         Dim m_b As Point
 
@@ -16,8 +21,15 @@
         End Sub
         Public Sub Draw()
             Using g As Graphics = Graphics.FromImage(m_image)
-                g.DrawPie(Pen, m_a.X, m_a.Y, 100, 100, 0, 90)
-            End Using
+            xoffset += xspeed
+            yoffset += yspeed
+            If fill Then
+                g.FillPie(New SolidBrush(Pen.Color), m_a.X, m_b.Y, 100, 100, 0, 90)
+            Else
+
+                g.DrawPie(Pen, m_a.X + xoffset, m_a.Y + yoffset, 100, 100, 0, 90)
+            End If
+        End Using
         End Sub
 
 

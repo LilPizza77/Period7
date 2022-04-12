@@ -10,6 +10,7 @@
         pictureBox1_MouseMove(sender, e)
     End Sub
 
+
     Private Sub pictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
         Dim d As Object
         If m_Previous IsNot Nothing And SquareRadio.Checked Then
@@ -21,7 +22,8 @@
             PictureBox1.Invalidate()
             m_Previous = e.Location
             l.fill = CheckBox2.Checked
-        ElseIf m_Previous IsNot Nothing And lineRadio.Checked Then
+            l.xspeed = xspeedTrackBar.Value
+        ElseIf m_Previous IsNot Nothing And LineRadio.Checked Then
             Dim l As New Line(PictureBox1.Image, m_Previous, e.Location)
             l.Pen = New Pen(c, w)
             l.xspeed = xspeedTrackBar.Value
@@ -36,6 +38,8 @@
             m_shapes.Add(l)
             PictureBox1.Invalidate()
             m_Previous = e.Location
+            l.fill = CheckBox2.Checked
+            l.xspeed = xspeedTrackBar.Value
         ElseIf m_Previous IsNot Nothing And PieRadio.Checked Then
             Dim l As New Pie(PictureBox1.Image, m_Previous, e.Location)
             l.Pen = New Pen(c, w)
@@ -44,6 +48,8 @@
             m_shapes.Add(l)
             PictureBox1.Invalidate()
             m_Previous = e.Location
+            l.fill = CheckBox2.Checked
+            l.xspeed = xspeedTrackBar.Value
         ElseIf m_Previous IsNot Nothing And TriangleRadio.Checked Then
             Dim l As New Triangle(PictureBox1.Image, m_Previous, e.Location)
             l.Pen = New Pen(c, w)
@@ -52,6 +58,8 @@
             m_shapes.Add(l)
             PictureBox1.Invalidate()
             m_Previous = e.Location
+            l.fill = CheckBox2.Checked
+            l.xspeed = xspeedTrackBar.Value
         ElseIf m_Previous IsNot Nothing And PolygonRadio.Checked Then
             Dim l As New Polygon(PictureBox1.Image, m_Previous, e.Location)
             l.Pen = New Pen(c, w)
@@ -60,6 +68,8 @@
             m_shapes.Add(l)
             PictureBox1.Invalidate()
             m_Previous = e.Location
+            l.fill = CheckBox2.Checked
+            l.xspeed = xspeedTrackBar.Value
         ElseIf m_Previous IsNot Nothing And NgonRadio.Checked Then
             Dim l As New Ngon(PictureBox1.Image, m_Previous, e.Location)
             l.Pen = New Pen(c, w)
@@ -70,6 +80,8 @@
             m_shapes.Add(l)
             PictureBox1.Invalidate()
             m_Previous = e.Location
+            l.fill = CheckBox2.Checked
+            l.xspeed = xspeedTrackBar.Value
         ElseIf m_Previous IsNot Nothing And PictureRadio.Checked Then
             Dim l As New PBox(PictureBox1.Image, m_Previous, e.Location)
             l.w = TrackBar2.Value
@@ -88,6 +100,8 @@
         m_Previous = Nothing
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+
         If PictureBox1.Image Is Nothing Then
             Dim bmp As New Bitmap(PictureBox1.Width, PictureBox1.Height)
             Using g As Graphics = Graphics.FromImage(bmp)
@@ -102,7 +116,7 @@
         For Each s As Object In m_shapes
             s.Draw()
         Next
-        If (CheckBox1.checked) Then
+        If (CheckBox1.Checked) Then
             Refresh()
         End If
     End Sub

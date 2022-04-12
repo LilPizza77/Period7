@@ -3,6 +3,11 @@
     Public Property Pen As Pen
     Public Property w As Integer
     Public Property h As Integer
+    Public Property fill As Boolean
+    Public Property xspeed As Integer
+    Public Property yspeed As Integer
+    Dim xoffset As Integer
+    Dim yoffset As Integer
     Dim m_image As Image
     Dim m_a As Point
     Dim m_b As Point
@@ -14,11 +19,17 @@
         m_b = b
     End Sub
     Public Sub Draw()
-        points(0) = New Point(m_a.X, m_a.Y)
-        points(1) = New Point(m_a.X, m_a.Y + 50)
-        points(2) = New Point(m_a.X + 50, m_a.Y)
+        points(0) = New Point(m_a.X + xoffset, m_a.Y + yoffset)
+        points(1) = New Point(m_a.X + xoffset, m_a.Y + 50 + yoffset)
+        points(2) = New Point(m_a.X + 50 + xoffset, m_a.Y + yoffset)
         Using g As Graphics = Graphics.FromImage(m_image)
-            g.DrawPolygon(Pen, points)
+            xoffset += xspeed
+            yoffset += yspeed
+            If fill Then
+                g.FillPolygon(New SolidBrush(Pen.Color), points)
+            Else
+                g.DrawPolygon(Pen, points)
+            End If
         End Using
 
     End Sub

@@ -2,11 +2,12 @@
     Public Property Pen As Pen
     Public Property xspeed As Integer
     Public Property yspeed As Integer
+    Dim xoffset As Integer
+    Dim yoffset As Integer
     Dim m_image As Image
     Dim m_a As Point
     Dim m_b As Point
-    Dim xoffset As Integer
-    Dim yoffset As Integer
+
 
     Public Sub New(i As Image, a As Point, b As Point)
         Pen = Pens.Red
