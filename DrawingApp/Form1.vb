@@ -23,10 +23,25 @@
             m_Previous = e.Location
             l.fill = CheckBox2.Checked
             l.xspeed = xspeedTrackBar.Value
-        ElseIf m_Previous IsNot Nothing And LineRadio.Checked Then
+            l.yspeed = yspeedTrackBar.Value
+            l.gradient = CheckBox3.Checked
+        ElseIf m_Previous IsNot Nothing And squarecircleradio.Checked Then
+            Dim l As New SquareCircle(PictureBox1.Image, m_Previous, e.Location)
+            l.Pen = New Pen(c, w)
+                l.w = TrackBar2.Value
+                l.h = TrackBar3.Value
+                m_shapes.Add(l)
+                PictureBox1.Invalidate()
+                m_Previous = e.Location
+                l.fill = CheckBox2.Checked
+                l.xspeed = xspeedTrackBar.Value
+                l.yspeed = yspeedTrackBar.Value
+                l.gradient = CheckBox3.Checked
+            ElseIf m_Previous IsNot Nothing And LineRadio.Checked Then
             Dim l As New Line(PictureBox1.Image, m_Previous, e.Location)
             l.Pen = New Pen(c, w)
             l.xspeed = xspeedTrackBar.Value
+            l.yspeed = yspeedTrackBar.Value
             m_shapes.Add(l)
             PictureBox1.Invalidate()
             m_Previous = e.Location
@@ -40,6 +55,8 @@
             m_Previous = e.Location
             l.fill = CheckBox2.Checked
             l.xspeed = xspeedTrackBar.Value
+            l.yspeed = yspeedTrackBar.Value
+            l.gradient = CheckBox3.Checked
         ElseIf m_Previous IsNot Nothing And PieRadio.Checked Then
             Dim l As New Pie(PictureBox1.Image, m_Previous, e.Location)
             l.Pen = New Pen(c, w)
@@ -50,6 +67,8 @@
             m_Previous = e.Location
             l.fill = CheckBox2.Checked
             l.xspeed = xspeedTrackBar.Value
+            l.yspeed = yspeedTrackBar.Value
+            l.gradient = CheckBox3.Checked
         ElseIf m_Previous IsNot Nothing And TriangleRadio.Checked Then
             Dim l As New Triangle(PictureBox1.Image, m_Previous, e.Location)
             l.Pen = New Pen(c, w)
@@ -60,6 +79,8 @@
             m_Previous = e.Location
             l.fill = CheckBox2.Checked
             l.xspeed = xspeedTrackBar.Value
+            l.yspeed = yspeedTrackBar.Value
+            l.gradient = CheckBox3.Checked
         ElseIf m_Previous IsNot Nothing And PolygonRadio.Checked Then
             Dim l As New Polygon(PictureBox1.Image, m_Previous, e.Location)
             l.Pen = New Pen(c, w)
@@ -70,6 +91,8 @@
             m_Previous = e.Location
             l.fill = CheckBox2.Checked
             l.xspeed = xspeedTrackBar.Value
+            l.yspeed = yspeedTrackBar.Value
+            l.gradient = CheckBox3.Checked
         ElseIf m_Previous IsNot Nothing And NgonRadio.Checked Then
             Dim l As New Ngon(PictureBox1.Image, m_Previous, e.Location)
             l.Pen = New Pen(c, w)
@@ -82,6 +105,8 @@
             m_Previous = e.Location
             l.fill = CheckBox2.Checked
             l.xspeed = xspeedTrackBar.Value
+            l.yspeed = yspeedTrackBar.Value
+            l.gradient = CheckBox3.Checked
         ElseIf m_Previous IsNot Nothing And PictureRadio.Checked Then
             Dim l As New PBox(PictureBox1.Image, m_Previous, e.Location)
             l.w = TrackBar2.Value
@@ -171,4 +196,6 @@
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         type = "picture"
     End Sub
+
+
 End Class

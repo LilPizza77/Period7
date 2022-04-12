@@ -71,6 +71,10 @@ Partial Class CircleRadio
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.SquareCircleRadio = New System.Windows.Forms.RadioButton()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,6 +91,7 @@ Partial Class CircleRadio
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -370,7 +375,7 @@ Partial Class CircleRadio
         '
         'xspeedTrackBar
         '
-        Me.xspeedTrackBar.Location = New System.Drawing.Point(12, 486)
+        Me.xspeedTrackBar.Location = New System.Drawing.Point(169, 438)
         Me.xspeedTrackBar.Minimum = -10
         Me.xspeedTrackBar.Name = "xspeedTrackBar"
         Me.xspeedTrackBar.Size = New System.Drawing.Size(104, 45)
@@ -378,7 +383,7 @@ Partial Class CircleRadio
         '
         'yspeedTrackBar
         '
-        Me.yspeedTrackBar.Location = New System.Drawing.Point(12, 552)
+        Me.yspeedTrackBar.Location = New System.Drawing.Point(39, 438)
         Me.yspeedTrackBar.Minimum = -10
         Me.yspeedTrackBar.Name = "yspeedTrackBar"
         Me.yspeedTrackBar.Size = New System.Drawing.Size(104, 45)
@@ -529,11 +534,53 @@ Partial Class CircleRadio
         Me.CheckBox3.Text = "Gradiant Fill "
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(172, 486)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(101, 13)
+        Me.Label7.TabIndex = 45
+        Me.Label7.Text = "X speed (Animation)"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(42, 486)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(101, 13)
+        Me.Label8.TabIndex = 46
+        Me.Label8.Text = "Y speed (Animation)"
+        '
+        'SquareCircleRadio
+        '
+        Me.SquareCircleRadio.AutoSize = True
+        Me.SquareCircleRadio.Location = New System.Drawing.Point(796, 449)
+        Me.SquareCircleRadio.Name = "SquareCircleRadio"
+        Me.SquareCircleRadio.Size = New System.Drawing.Size(14, 13)
+        Me.SquareCircleRadio.TabIndex = 47
+        Me.SquareCircleRadio.TabStop = True
+        Me.SquareCircleRadio.UseVisualStyleBackColor = True
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
+        Me.PictureBox10.Location = New System.Drawing.Point(815, 438)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(44, 45)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox10.TabIndex = 48
+        Me.PictureBox10.TabStop = False
+        '
         'CircleRadio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(920, 609)
+        Me.Controls.Add(Me.PictureBox10)
+        Me.Controls.Add(Me.SquareCircleRadio)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.CheckBox3)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -597,6 +644,7 @@ Partial Class CircleRadio
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -650,4 +698,8 @@ Partial Class CircleRadio
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents SquareCircleRadio As RadioButton
+    Friend WithEvents PictureBox10 As PictureBox
 End Class

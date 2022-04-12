@@ -7,6 +7,7 @@
     Public Property fill As Boolean
     Public Property xspeed As Integer
     Public Property yspeed As Integer
+    Public Property gradient As Boolean
     Dim xoffset As Integer
     Dim yoffset As Integer
     Dim m_image As Image
@@ -25,6 +26,14 @@
             yoffset += yspeed
             If fill Then
                 g.FillPie(New SolidBrush(Pen.Color), m_a.X, m_b.Y, 100, 100, 0, 90)
+            ElseIf gradient Then
+                Dim lingrBrush As Drawing.Drawing2D.LinearGradientBrush
+                lingrBrush = New Drawing.Drawing2D.LinearGradientBrush(
+                                New Point(0, 10),
+                                New Point(200, 10),
+                                Color.FromArgb(255, 255, 0, 0),
+                                Color.FromArgb(255, 0, 0, 255))
+                g.FillPie(lingrBrush, m_a.X, m_b.Y, 100, 100, 0, 90)
             Else
 
                 g.DrawPie(Pen, m_a.X + xoffset, m_a.Y + yoffset, 100, 100, 0, 90)

@@ -108,6 +108,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Square.vb" />
+    <Compile Include="SquareCircle.vb" />
     <Compile Include="Triangle.vb" />
   </ItemGroup>
   <ItemGroup>
