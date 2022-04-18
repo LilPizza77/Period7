@@ -21,8 +21,8 @@
     End Sub
     Public Sub Draw()
         points(0) = New Point(m_a.X + xoffset, m_a.Y + yoffset)
-        points(1) = New Point(m_a.X + xoffset, m_a.Y + 50 + yoffset)
-        points(2) = New Point(m_a.X + 50 + xoffset, m_a.Y + yoffset)
+        points(1) = New Point(m_a.X + xoffset, m_a.Y + h + yoffset)
+        points(2) = New Point(m_a.X + w + xoffset, m_a.Y + yoffset)
         Using g As Graphics = Graphics.FromImage(m_image)
             xoffset += xspeed
             yoffset += yspeed
